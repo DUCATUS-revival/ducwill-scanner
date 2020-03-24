@@ -1,0 +1,25 @@
+package io.lastwill.eventscan.model;
+
+public enum ContractState {
+    CREATED,
+    CONFIRMED,
+    KILLED,
+    WAITING_FOR_PAYMENT,
+    WAITING_FOR_DEPLOYMENT,
+    ACTIVE,
+    TRIGGERED,
+    EXPIRED,
+    POSTPONED,
+    ENDED,
+    WAITING_ACTIVATION,
+    UNDER_CROWDSALE,
+    DONE,
+    CANCELLED,
+    WAITING_FOR_ACTIVATION,
+    FAIL_IN_CONFIRM,
+    WAITING_FOR_CONFIRM,
+    FAILED,
+    WAITING_FOR_APPROVE,
+    WAITING_FOR_EXECUTION,
+    TIME_IS_UP,
+}
