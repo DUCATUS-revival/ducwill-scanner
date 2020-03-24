@@ -51,24 +51,6 @@ public class ContractEventHandler {
         // catch airdrop events
         Product product = event.getContract().getProduct();
 
-        if (product instanceof ProductTokenProtector) {
-            for (ContractEvent contractEvent : event.getEvents()) {
-                if (contractEvent instanceof ApprovalEvent) {
-                    eventPublisher.publish(
-                            new TokenProtectorApproveEvent(event.getNetworkType(), event.getTransaction(),
-                                    (ApprovalEvent) contractEvent, event.getContract().getId()));
-                    externalNotifier.send(
-                            event.getNetworkType(),
-                            new ApproveTokenProtectorNotify(
-                                    event.getContract().getId(),
-                                    PaymentStatus.COMMITTED,
-                                    event.getTransaction().getHash(),
-                                    (ApprovalEvent) contractEvent
-                            )
-                    );
-                }
-            }
-        }
         for (ContractEvent contractEvent : event.getEvents()) {
             // skip event if event.address != contract.address (it might be when internal transaction occurs)
             if (!contractEvent.getAddress().equalsIgnoreCase(event.getContract().getAddress())) {

@@ -47,7 +47,8 @@ public class ApproveTokenProtectorMonitor {
             return;
         }
 
-        tokenProtectorProducts = productRepository.findProtectorsByOwner(addresses);
+        tokenProtectorProducts = Collections.emptyList();
+//                productRepository.findProtectorsByOwner(addresses);
         if (tokenProtectorProducts.isEmpty()) {
             return;
         }
