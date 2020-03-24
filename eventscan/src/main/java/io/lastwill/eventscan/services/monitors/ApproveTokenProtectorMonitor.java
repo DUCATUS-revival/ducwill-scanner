@@ -38,8 +38,8 @@ public class ApproveTokenProtectorMonitor {
 
 //    @EventListener
     private void onNewBlockEvent(final NewBlockEvent event) {
-        if (event.getNetworkType() != NetworkType.DUCX_MAINNET &&
-            event.getNetworkType() != NetworkType.DUCX_TESTNET) {
+        if (event.getNetworkType() != NetworkType.DUCATUSX_MAINNET &&
+            event.getNetworkType() != NetworkType.DUCATUSX_TESTNET) {
             return;
         }
         Set<String> addresses = new HashSet<>(event.getTransactionsByAddress().keySet());

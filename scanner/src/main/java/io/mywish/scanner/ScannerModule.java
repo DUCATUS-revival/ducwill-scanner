@@ -18,12 +18,12 @@ public class ScannerModule {
 
     @Bean
     public PendingTransactionService pendingTransactionServiceMain() {
-        return new PendingTransactionService(NetworkType.DUCX_MAINNET);
+        return new PendingTransactionService(NetworkType.DUCATUSX_MAINNET);
     }
 
     @Bean
     public PendingTransactionService pendingTransactionServiceRopsten() {
-        return new PendingTransactionService(NetworkType.DUCX_TESTNET);
+        return new PendingTransactionService(NetworkType.DUCATUSX_TESTNET);
     }
 
 }

@@ -11,7 +11,7 @@ public class EtherescanExplorer implements BlockchainExplorer {
 
     public EtherescanExplorer(boolean testnet) {
         this.host = testnet ? "ropsten.etherscan.io" : "etherscan.io";
-        this.networkType = testnet ? NetworkType.DUCX_TESTNET : NetworkType.DUCX_MAINNET;
+        this.networkType = testnet ? NetworkType.DUCATUSX_TESTNET : NetworkType.DUCATUSX_MAINNET;
     }
 
     private String build(String argType, String arg) {

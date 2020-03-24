@@ -46,9 +46,9 @@ public class BotIntegration {
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private final Map<NetworkType, String> networkName = new HashMap<NetworkType, String>() {{
-        put(NetworkType.DUCX_MAINNET, "DUCX");
-        put(NetworkType.DUCX_TESTNET, "tDUCX");
-        put(NetworkType.DUC_MAINNET, "DUC");
+        put(NetworkType.DUCATUSX_MAINNET, "DUCX");
+        put(NetworkType.DUCATUSX_TESTNET, "tDUCX");
+        put(NetworkType.DUCATUS_MAINNET, "DUC");
 
     }};
 

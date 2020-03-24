@@ -28,7 +28,7 @@ public class Web3BCModule {
             @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
             @Value("${etherscanner.pending-transactions-threshold}") int pendingThreshold) throws ConnectException {
         return new Web3Network(
-                NetworkType.DUCX_MAINNET,
+                NetworkType.DUCATUSX_MAINNET,
                 new WebSocketClient(web3Url),
                 pollingInterval,
                 pendingThreshold);
@@ -41,7 +41,7 @@ public class Web3BCModule {
             @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
             @Value("${etherscanner.pending-transactions-threshold}") int pendingThreshold) throws ConnectException {
         return new Web3Network(
-                NetworkType.DUCX_TESTNET,
+                NetworkType.DUCATUSX_TESTNET,
                 new WebSocketClient(web3Url),
                 pollingInterval,
                 pendingThreshold);
@@ -53,14 +53,14 @@ public class Web3BCModule {
         public LastBlockPersister ethMainnetLastBlockPersister(
                 LastBlockRepository lastBlockRepository
         ) {
-            return new LastBlockDbPersister(NetworkType.DUCX_MAINNET, lastBlockRepository, null);
+            return new LastBlockDbPersister(NetworkType.DUCATUSX_MAINNET, lastBlockRepository, null);
         }
 
         @Bean
         public LastBlockPersister ethRopstenLastBlockPersister(
                 LastBlockRepository lastBlockRepository
         ) {
-            return new LastBlockDbPersister(NetworkType.DUCX_TESTNET, lastBlockRepository, null);
+            return new LastBlockDbPersister(NetworkType.DUCATUSX_TESTNET, lastBlockRepository, null);
         }
     }
 

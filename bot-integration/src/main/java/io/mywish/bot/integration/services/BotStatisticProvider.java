@@ -27,9 +27,9 @@ public class BotStatisticProvider implements InformationProvider {
     private NetworkRepository networkRepository;
 
     private final Map<NetworkType, String> networkNames = new HashMap<NetworkType, String>() {{
-        put(NetworkType.DUCX_MAINNET, "DUCX");
-        put(NetworkType.DUCX_TESTNET, "DUCX Testnet");
-        put(NetworkType.DUC_MAINNET, "DUC");
+        put(NetworkType.DUCATUSX_MAINNET, "DUCX");
+        put(NetworkType.DUCATUSX_TESTNET, "DUCX Testnet");
+        put(NetworkType.DUCATUS_MAINNET, "DUC");
     }};
 
     @Override

@@ -50,15 +50,15 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 
     @Query("select c from ProductToken c " +
             "where c.createdDate >= :from " +
-            "and c.network.type = io.lastwill.eventscan.model.NetworkType.DUCX_MAINNET")
+            "and c.network.type = io.lastwill.eventscan.model.NetworkType.DUCATUSX_MAINNET")
     List<ProductToken> findEthTokensFromDate(@Param("from") LocalDateTime from);
 
     @Query("select c from ProductCrowdsale c " +
             "where c.createdDate >= :from " +
-            "and c.network.type = io.lastwill.eventscan.model.NetworkType.DUCX_MAINNET")
+            "and c.network.type = io.lastwill.eventscan.model.NetworkType.DUCATUSX_MAINNET")
     List<ProductCrowdsale> findEthIcoFromDate(@Param("from") LocalDateTime from);
 
 
-    @Query("select c from ProductTokenProtector c where lower(c.owner) in :owners")
-    List<ProductTokenProtector> findProtectorsByOwner(@Param("owners") Set<String> owners);
+//    @Query("select c from ProductTokenProtector c where lower(c.owner) in :owners")
+//    List<ProductTokenProtector> findProtectorsByOwner(@Param("owners") Set<String> owners);
 }

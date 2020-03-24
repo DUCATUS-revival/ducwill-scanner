@@ -53,9 +53,9 @@ public class MQExternalNotifier implements ExternalNotifier {
 
     @PostConstruct
     protected void init() throws IOException, TimeoutException {
-        queueByNetwork.put(NetworkType.DUCX_MAINNET, queueNameDucxMainnet);
-        queueByNetwork.put(NetworkType.DUCX_TESTNET, queueNameDucxTestnet);
-        queueByNetwork.put(NetworkType.DUC_MAINNET, queueNameDucMainnet);
+        queueByNetwork.put(NetworkType.DUCATUSX_MAINNET, queueNameDucxMainnet);
+        queueByNetwork.put(NetworkType.DUCATUSX_TESTNET, queueNameDucxTestnet);
+        queueByNetwork.put(NetworkType.DUCATUS_MAINNET, queueNameDucMainnet);
 
         connection = factory.newConnection();
         channel = connection.createChannel();

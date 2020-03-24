@@ -26,7 +26,7 @@ public class DucPaymentMonitor {
 
     @EventListener
     private void handleBtcBlock(NewBlockEvent event) {
-        if (event.getNetworkType() != NetworkType.DUC_MAINNET) {
+        if (event.getNetworkType() != NetworkType.DUCATUS_MAINNET) {
             return;
         }
         Set<String> addresses = event.getTransactionsByAddress().keySet();

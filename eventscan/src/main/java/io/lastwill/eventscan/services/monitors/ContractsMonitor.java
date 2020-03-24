@@ -45,8 +45,8 @@ public class ContractsMonitor {
 
     @PostConstruct
     protected void init() {
-        proxyByNetwork.put(NetworkType.DUCX_MAINNET, proxyAddressEthereum.toLowerCase());
-        proxyByNetwork.put(NetworkType.DUCX_TESTNET, proxyAddressRopsten.toLowerCase());
+        proxyByNetwork.put(NetworkType.DUCATUSX_MAINNET, proxyAddressEthereum.toLowerCase());
+        proxyByNetwork.put(NetworkType.DUCATUSX_TESTNET, proxyAddressRopsten.toLowerCase());
         if (skipAddressesLine == null || skipAddressesLine.isEmpty()) {
             return;
         }

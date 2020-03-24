@@ -7,7 +7,6 @@ import io.mywish.btc.blockchain.helper.DucatusNetworkParams;
 import io.mywish.btc.blockchain.services.DucNetwork;
 import io.mywish.btc.blockchain.services.DucScanner;
 import io.mywish.scanner.services.LastBlockDbPersister;
-import io.mywish.scanner.services.LastBlockFilePersister;
 import io.mywish.scanner.services.LastBlockPersister;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -39,7 +38,7 @@ public class DucBCModule {
             }
         }
         return new DucNetwork(
-                NetworkType.DUC_MAINNET,
+                NetworkType.DUCATUS_MAINNET,
                 new BtcdClientImpl(
                         closeableHttpClient,
                         rpc.getScheme(),
@@ -58,7 +57,7 @@ public class DucBCModule {
                 LastBlockRepository lastBlockRepository,
                 final @Value("${etherscanner.ducatus.last-block.mainnet:#{null}}") Long lastBlock
         ) {
-            return new LastBlockDbPersister(NetworkType.DUC_MAINNET, lastBlockRepository, lastBlock);
+            return new LastBlockDbPersister(NetworkType.DUCATUS_MAINNET, lastBlockRepository, lastBlock);
         }
     }
 

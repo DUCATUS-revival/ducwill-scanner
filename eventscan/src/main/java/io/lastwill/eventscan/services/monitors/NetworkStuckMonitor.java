@@ -52,9 +52,9 @@ public class NetworkStuckMonitor {
 
     @PostConstruct
     protected void init() {
-        checkFrequencies.put(NetworkType.DUCX_MAINNET, ethInterval);
-        checkFrequencies.put(NetworkType.DUCX_TESTNET, ethInterval);
-        checkFrequencies.put(NetworkType.DUC_MAINNET, ducInterval);
+        checkFrequencies.put(NetworkType.DUCATUSX_MAINNET, ethInterval);
+        checkFrequencies.put(NetworkType.DUCATUSX_TESTNET, ethInterval);
+        checkFrequencies.put(NetworkType.DUCATUS_MAINNET, ducInterval);
 
         notifyFrequencies.putAll(checkFrequencies);
 

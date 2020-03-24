@@ -45,8 +45,8 @@ public class InvestmentPoolMonitor {
         if (event.getTransactionsByAddress().isEmpty()) {
             return;
         }
-        if (event.getNetworkType() != NetworkType.DUCX_MAINNET
-                && event.getNetworkType() != NetworkType.DUCX_TESTNET) {
+        if (event.getNetworkType() != NetworkType.DUCATUSX_MAINNET
+                && event.getNetworkType() != NetworkType.DUCATUSX_TESTNET) {
             return;
         }
         List<ProductInvestmentPool> products = productRepository.findIPoolByTokenAddress(
