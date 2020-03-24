@@ -180,19 +180,5 @@ public class BotIntegration {
                 .format(dateFormatter);
     }
 
-    private String getSymbol(Swaps2Order order, String token) {
-        String[] symbols = order.getName().split("<>");
 
-        if (symbols.length == 2) {
-            if (token.equalsIgnoreCase(order.getBaseAddress())) {
-                return symbols[0];
-            }
-
-            if (token.equalsIgnoreCase(order.getQuoteAddress())) {
-                return symbols[1];
-            }
-        }
-
-        return token;
-    }
 }
