@@ -153,6 +153,8 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <mainClass>io.lastwill.eventscan.Application</mainClass>
+                    <executable>true</executable>
+                    <finalName>ducwill</finalName>
                 </configuration>
                 <executions>
                     <execution>
