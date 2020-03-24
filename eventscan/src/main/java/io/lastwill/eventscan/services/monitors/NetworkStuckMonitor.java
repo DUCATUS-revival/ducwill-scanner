@@ -37,9 +37,9 @@ public class NetworkStuckMonitor {
 
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
-    @Value("${io.lastwill.eventscan.network-stuck.interval.btc}")
-    private long btcInterval;
-    @Value("${io.lastwill.eventscan.network-stuck.interval.eth}")
+    @Value("${io.lastwill.eventscan.network-stuck.interval.duc}")
+    private long ducInterval;
+    @Value("${io.lastwill.eventscan.network-stuck.interval.ducx}")
     private long ethInterval;
 
     @Value("${io.lastwill.eventscan.network-stuck.interval.pending}")
@@ -52,10 +52,9 @@ public class NetworkStuckMonitor {
 
     @PostConstruct
     protected void init() {
-        checkFrequencies.put(NetworkType.ETHEREUM_MAINNET, ethInterval);
-        checkFrequencies.put(NetworkType.ETHEREUM_ROPSTEN, ethInterval);
-        checkFrequencies.put(NetworkType.BTC_MAINNET, btcInterval);
-        checkFrequencies.put(NetworkType.BTC_TESTNET_3, btcInterval);
+        checkFrequencies.put(NetworkType.DUCX_MAINNET, ethInterval);
+        checkFrequencies.put(NetworkType.DUCX_TESTNET, ethInterval);
+        checkFrequencies.put(NetworkType.DUC_MAINNET, ducInterval);
 
         notifyFrequencies.putAll(checkFrequencies);
 

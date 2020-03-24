@@ -46,7 +46,7 @@ public class ContractEventHandler {
     @Autowired
     private TransferOwnershipHandler transferOwnershipHandler;
 
-    @EventListener
+//    @EventListener
     private void eventsHandler(final ContractEventsEvent event) {
         // catch airdrop events
         Product product = event.getContract().getProduct();

@@ -17,7 +17,6 @@ import io.mywish.scanner.model.NewBlockEvent;
 import io.mywish.scanner.services.EventPublisher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -39,8 +38,8 @@ public class ApproveTokenProtectorMonitor {
 
 //    @EventListener
     private void onNewBlockEvent(final NewBlockEvent event) {
-        if (event.getNetworkType() != NetworkType.ETHEREUM_MAINNET &&
-            event.getNetworkType() != NetworkType.ETHEREUM_ROPSTEN) {
+        if (event.getNetworkType() != NetworkType.DUCX_MAINNET &&
+            event.getNetworkType() != NetworkType.DUCX_TESTNET) {
             return;
         }
         Set<String> addresses = new HashSet<>(event.getTransactionsByAddress().keySet());

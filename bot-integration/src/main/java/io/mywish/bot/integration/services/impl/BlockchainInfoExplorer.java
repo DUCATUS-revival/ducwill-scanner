@@ -11,7 +11,7 @@ public class BlockchainInfoExplorer implements BlockchainExplorer {
 
     public BlockchainInfoExplorer(boolean testnet) {
         this.host = testnet ? "testnet.blockchain.info" : "blockchain.info";
-        this.networkType = testnet ? NetworkType.BTC_TESTNET_3 : NetworkType.BTC_MAINNET;
+        this.networkType = NetworkType.DUC_MAINNET;
     }
 
     private String build(String argType, String arg) {

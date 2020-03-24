@@ -32,14 +32,13 @@ public class MQExternalNotifier implements ExternalNotifier {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @Value("${io.lastwill.eventscan.backend-mq.queue.ethereum}")
-    private String queueNameEthereum;
-    @Value("${io.lastwill.eventscan.backend-mq.queue.ropsten}")
-    private String queueNameRopsten;
-    @Value("${io.lastwill.eventscan.backend-mq.queue.btc-mainnet}")
-    private String queueNameBtcMainnet;
-    @Value("${io.lastwill.eventscan.backend-mq.queue.btc-testnet}")
-    private String queueNameBtcTestnet;
+    @Value("${io.lastwill.eventscan.backend-mq.queue.ducatusx-mainnet}")
+    private String queueNameDucxMainnet;
+    @Value("${io.lastwill.eventscan.backend-mq.queue.ducatusx-testnet}")
+    private String queueNameDucxTestnet;
+    @Value("${io.lastwill.eventscan.backend-mq.queue.duc-mainnet}")
+    private String queueNameDucMainnet;
+
 
     private Map<NetworkType, String> queueByNetwork = new HashMap<>();
 
@@ -54,11 +53,9 @@ public class MQExternalNotifier implements ExternalNotifier {
 
     @PostConstruct
     protected void init() throws IOException, TimeoutException {
-        queueByNetwork.put(NetworkType.ETHEREUM_MAINNET, queueNameEthereum);
-        queueByNetwork.put(NetworkType.ETHEREUM_ROPSTEN, queueNameRopsten);
-
-        queueByNetwork.put(NetworkType.BTC_MAINNET, queueNameBtcMainnet);
-        queueByNetwork.put(NetworkType.BTC_TESTNET_3, queueNameBtcTestnet);
+        queueByNetwork.put(NetworkType.DUCX_MAINNET, queueNameDucxMainnet);
+        queueByNetwork.put(NetworkType.DUCX_TESTNET, queueNameDucxTestnet);
+        queueByNetwork.put(NetworkType.DUC_MAINNET, queueNameDucMainnet);
 
         connection = factory.newConnection();
         channel = connection.createChannel();

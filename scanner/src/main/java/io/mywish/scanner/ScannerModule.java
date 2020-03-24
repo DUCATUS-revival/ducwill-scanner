@@ -18,12 +18,12 @@ public class ScannerModule {
 
     @Bean
     public PendingTransactionService pendingTransactionServiceMain() {
-        return new PendingTransactionService(NetworkType.ETHEREUM_MAINNET);
+        return new PendingTransactionService(NetworkType.DUCX_MAINNET);
     }
 
     @Bean
     public PendingTransactionService pendingTransactionServiceRopsten() {
-        return new PendingTransactionService(NetworkType.ETHEREUM_ROPSTEN);
+        return new PendingTransactionService(NetworkType.DUCX_TESTNET);
     }
 
 }

@@ -27,10 +27,9 @@ public class BotStatisticProvider implements InformationProvider {
     private NetworkRepository networkRepository;
 
     private final Map<NetworkType, String> networkNames = new HashMap<NetworkType, String>() {{
-        put(NetworkType.ETHEREUM_MAINNET, "Ethereum");
-        put(NetworkType.ETHEREUM_ROPSTEN, "Ropsten");
-        put(NetworkType.BTC_MAINNET, "BTC");
-        put(NetworkType.BTC_TESTNET_3, "BTC Testnet");
+        put(NetworkType.DUCX_MAINNET, "DUCX");
+        put(NetworkType.DUCX_TESTNET, "DUCX Testnet");
+        put(NetworkType.DUC_MAINNET, "DUC");
     }};
 
     @Override

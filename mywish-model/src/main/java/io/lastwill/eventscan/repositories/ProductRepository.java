@@ -50,12 +50,12 @@ public interface ProductRepository extends CrudRepository<Product, Integer> {
 
     @Query("select c from ProductToken c " +
             "where c.createdDate >= :from " +
-            "and c.network.type = io.lastwill.eventscan.model.NetworkType.ETHEREUM_MAINNET")
+            "and c.network.type = io.lastwill.eventscan.model.NetworkType.DUCX_MAINNET")
     List<ProductToken> findEthTokensFromDate(@Param("from") LocalDateTime from);
 
     @Query("select c from ProductCrowdsale c " +
             "where c.createdDate >= :from " +
-            "and c.network.type = io.lastwill.eventscan.model.NetworkType.ETHEREUM_MAINNET")
+            "and c.network.type = io.lastwill.eventscan.model.NetworkType.DUCX_MAINNET")
     List<ProductCrowdsale> findEthIcoFromDate(@Param("from") LocalDateTime from);
 
 

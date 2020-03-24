@@ -52,7 +52,6 @@ public class DucBCModule {
     }
 
     @Configuration
-    @ConditionalOnProperty("etherscanner.ducatus.db-persister")
     public class DbPersisterConfiguration {
         @Bean
         public LastBlockPersister ducMainnetLastBlockPersister(
@@ -63,17 +62,6 @@ public class DucBCModule {
         }
     }
 
-    @Configuration
-    @ConditionalOnProperty(value = "etherscanner.ducatus.db-persister", havingValue = "false", matchIfMissing = true)
-    public class FilePersisterConfiguration {
-        @Bean
-        public LastBlockPersister ducMainnetLastBlockPersister(
-                final @Value("${etherscanner.start-block-dir}") String dir,
-                final @Value("${etherscanner.ducatus.last-block.mainnet:#{null}}") Long lastBlock
-        ) {
-            return new LastBlockFilePersister(NetworkType.DUC_MAINNET, dir, lastBlock);
-        }
-    }
 
     @ConditionalOnBean(name = NetworkType.DUC_MAINNET_VALUE)
     @Bean

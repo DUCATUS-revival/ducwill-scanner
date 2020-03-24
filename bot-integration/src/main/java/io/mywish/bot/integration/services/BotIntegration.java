@@ -46,10 +46,10 @@ public class BotIntegration {
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private final Map<NetworkType, String> networkName = new HashMap<NetworkType, String>() {{
-        put(NetworkType.ETHEREUM_MAINNET, "ETH");
-        put(NetworkType.ETHEREUM_ROPSTEN, "tETH");
-        put(NetworkType.BTC_MAINNET, "BTC");
-        put(NetworkType.BTC_TESTNET_3, "tBTC");
+        put(NetworkType.DUCX_MAINNET, "DUCX");
+        put(NetworkType.DUCX_TESTNET, "tDUCX");
+        put(NetworkType.DUC_MAINNET, "DUC");
+
     }};
 
     private final String defaultNetwork = "unknown";
