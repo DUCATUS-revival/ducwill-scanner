@@ -6,7 +6,6 @@ import io.lastwill.eventscan.events.model.contract.crowdsale.FinalizedEvent;
 import io.lastwill.eventscan.events.model.contract.crowdsale.TimesChangedEvent;
 import io.lastwill.eventscan.events.model.contract.crowdsale.WhitelistedAddressAddedEvent;
 import io.lastwill.eventscan.events.model.contract.crowdsale.WhitelistedAddressRemovedEvent;
-import io.lastwill.eventscan.events.model.contract.erc20.ApprovalEvent;
 import io.lastwill.eventscan.events.model.contract.investmentPool.*;
 import io.lastwill.eventscan.events.model.contract.tokenProtector.SelfdestructionEvent;
 import io.lastwill.eventscan.events.model.contract.tokenProtector.TokensToSaveEvent;
@@ -46,7 +45,7 @@ public class ContractEventHandler {
     @Autowired
     private TransferOwnershipHandler transferOwnershipHandler;
 
-//    @EventListener
+    @EventListener
     private void eventsHandler(final ContractEventsEvent event) {
         // catch airdrop events
         Product product = event.getContract().getProduct();
