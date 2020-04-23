@@ -4,4 +4,5 @@ public enum  NetworkProviderType {
     DUCX,
     BTC,
     DUC,
+    ETH,
 }
