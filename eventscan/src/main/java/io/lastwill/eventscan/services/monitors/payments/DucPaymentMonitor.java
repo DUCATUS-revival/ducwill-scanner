@@ -51,6 +51,7 @@ public class DucPaymentMonitor {
                             }
 
                             eventPublisher.publish(new UserPaymentEvent(
+                                    userSiteBalance.getDucAddress(),
                                     event.getNetworkType(),
                                     tx,
                                     output.getValue(),
