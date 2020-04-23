@@ -42,10 +42,10 @@ public class DucxPaymentMonitor {
             return;
         }
 
-        List<UserSiteBalance> userSiteBalances = userSiteBalanceRepository.findByDucxAddressesList(addresses);
+        List<UserSiteBalance> userSiteBalances = userSiteBalanceRepository.findByEthAddressesList(addresses);
         for (UserSiteBalance userSiteBalance : userSiteBalances) {
             final List<WrapperTransaction> transactions = event.getTransactionsByAddress().get(
-                    userSiteBalance.getDucxAddress().toLowerCase()
+                    userSiteBalance.getEthAddress().toLowerCase()
             );
 
             if (transactions == null) {
@@ -54,17 +54,17 @@ public class DucxPaymentMonitor {
             }
 
             transactions.forEach(transaction -> {
-                if (!userSiteBalance.getDucxAddress().equalsIgnoreCase(transaction.getOutputs().get(0).getAddress())) {
+                if (!userSiteBalance.getEthAddress().equalsIgnoreCase(transaction.getOutputs().get(0).getAddress())) {
                     log.debug("Found transaction out from internal address. Skip it.");
                     return;
                 }
                 transactionProvider.getTransactionReceiptAsync(event.getNetworkType(), transaction)
                         .thenAccept(receipt -> {
                             eventPublisher.publish(new UserPaymentEvent(
-                                    userSiteBalance.getDucxAddress(),
+                                    userSiteBalance.getEthAddress(),
                                     event.getNetworkType(),
                                     transaction,
-                                    getAmountFor(userSiteBalance.getDucxAddress(), transaction),
+                                    getAmountFor(userSiteBalance.getEthAddress(), transaction),
                                     CryptoCurrency.DUCX,
                                     receipt.isSuccess(),
                                     userSiteBalance));
