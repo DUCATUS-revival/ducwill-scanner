@@ -70,8 +70,7 @@ public class EthBCModule {
             final @Qualifier(NetworkType.ETH_MAINNET_VALUE) Web3Network network,
             final @Qualifier("ethMainnetLastBlockPersister") LastBlockPersister lastBlockPersister,
             final @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
-            final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength,
-            final @Value("${etherscanner.eth.accelerator}") Integer accelerator
+            final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength
     ) {
         return new Web3Scanner(
                 network,
@@ -87,8 +86,7 @@ public class EthBCModule {
             final @Qualifier(NetworkType.ETH_TESTNET_VALUE) Web3Network network,
             final @Qualifier("ethRopstenLastBlockPersister") LastBlockPersister lastBlockPersister,
             final @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
-            final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength,
-            final @Value("${etherscanner.eth.accelerator}") Integer accelerator
+            final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength
     ) {
         return new Web3Scanner(
                 network,
