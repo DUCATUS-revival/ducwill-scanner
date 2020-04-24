@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Set;
 
 @Slf4j
-@Component
+//@Component
 public class DucPaymentMonitor {
     @Autowired
     private UserSiteBalanceRepository userSiteBalanceRepository;
@@ -51,6 +51,7 @@ public class DucPaymentMonitor {
                             }
 
                             eventPublisher.publish(new UserPaymentEvent(
+                                    userSiteBalance.getDucAddress(),
                                     event.getNetworkType(),
                                     tx,
                                     output.getValue(),
