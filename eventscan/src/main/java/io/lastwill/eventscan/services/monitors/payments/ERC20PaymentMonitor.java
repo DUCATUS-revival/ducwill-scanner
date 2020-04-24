@@ -14,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.EventListener;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.math.BigInteger;
@@ -23,6 +24,7 @@ import java.util.Map;
 import java.util.Set;
 
 @Slf4j
+@Component
 public class ERC20PaymentMonitor {
     @Autowired
     private UserSiteBalanceRepository userSiteBalanceRepository;
