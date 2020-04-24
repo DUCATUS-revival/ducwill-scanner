@@ -7,7 +7,7 @@ public enum CryptoCurrency {
     BTC(8),
     ETH(18),
     DUCX(18),
-    USDC(18),
+    USDC(6),
     DUC(8),
     GAS(8),
     USD(6, "$");
