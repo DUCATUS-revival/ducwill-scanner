@@ -21,7 +21,7 @@ import java.net.URI;
 @Configuration
 @ComponentScan
 public class EthBCModule {
-    @ConditionalOnProperty(name = "io.lastwill.eventscan.web3-url.ethereum")
+    @ConditionalOnProperty(name = "io.lastwill.eventscan.web3-url.mainnet")
     @Bean(name = NetworkType.ETH_MAINNET_VALUE)
     public Web3Network ethNetMain(
             @Value("${io.lastwill.eventscan.web3-url.mainnet}") URI web3Url,
