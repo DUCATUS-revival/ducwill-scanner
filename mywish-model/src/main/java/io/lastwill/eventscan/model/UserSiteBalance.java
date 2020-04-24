@@ -17,6 +17,8 @@ public class UserSiteBalance {
     private BigInteger balance;
     @Column(name = "duc_address")
     private String ducAddress;
+    @Column(name = "eth_address")
+    private String ethAddress;
     private String memo;
     @ManyToOne
     @JoinColumn(name = "subsite_id", referencedColumnName = "id")
