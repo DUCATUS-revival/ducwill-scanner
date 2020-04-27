@@ -23,7 +23,7 @@ import java.net.URI;
 public class Web3BCModule {
     @ConditionalOnProperty(name = "io.lastwill.eventscan.ducatusx.mainnet")
     @Bean(name = NetworkType.DUCX_MAINNET_VALUE)
-    public Web3Network ethNetMain(
+    public Web3Network ducxNetMain(
             @Value("${io.lastwill.eventscan.ducatusx.mainnet}") URI web3Url,
             @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
             @Value("${etherscanner.pending-transactions-threshold}") int pendingThreshold) throws ConnectException {
@@ -36,7 +36,7 @@ public class Web3BCModule {
 
     @ConditionalOnProperty(name = "io.lastwill.eventscan.ducatusx.testnet")
     @Bean(name = NetworkType.DUCX_TESTNET_VALUE)
-    public Web3Network ethNetRopsten(
+    public Web3Network ducxNetRopsten(
             @Value("${io.lastwill.eventscan.ducatusx.testnet}") URI web3Url,
             @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
             @Value("${etherscanner.pending-transactions-threshold}") int pendingThreshold) throws ConnectException {
@@ -48,16 +48,16 @@ public class Web3BCModule {
     }
 
     @Configuration
-    public class EthDbPersisterConfiguration {
+    public class DucxDbPersisterConfiguration {
         @Bean
-        public LastBlockPersister ethMainnetLastBlockPersister(
+        public LastBlockPersister ducxMainnetLastBlockPersister(
                 LastBlockRepository lastBlockRepository
         ) {
             return new LastBlockDbPersister(NetworkType.DUCATUSX_MAINNET, lastBlockRepository, null);
         }
 
         @Bean
-        public LastBlockPersister ethRopstenLastBlockPersister(
+        public LastBlockPersister ducxRopstenLastBlockPersister(
                 LastBlockRepository lastBlockRepository
         ) {
             return new LastBlockDbPersister(NetworkType.DUCATUSX_TESTNET, lastBlockRepository, null);
@@ -68,7 +68,7 @@ public class Web3BCModule {
     @Bean
     public Web3Scanner ducxScannerMain(
             final @Qualifier(NetworkType.DUCX_MAINNET_VALUE) Web3Network network,
-            final @Qualifier("ethMainnetLastBlockPersister") LastBlockPersister lastBlockPersister,
+            final @Qualifier("ducxMainnetLastBlockPersister") LastBlockPersister lastBlockPersister,
             final @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
             final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength
     ) {
@@ -84,7 +84,7 @@ public class Web3BCModule {
     @Bean
     public Web3Scanner ducxScannerTestnet(
             final @Qualifier(NetworkType.DUCX_TESTNET_VALUE) Web3Network network,
-            final @Qualifier("ethRopstenLastBlockPersister") LastBlockPersister lastBlockPersister,
+            final @Qualifier("ducxRopstenLastBlockPersister") LastBlockPersister lastBlockPersister,
             final @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
             final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength
     ) {
