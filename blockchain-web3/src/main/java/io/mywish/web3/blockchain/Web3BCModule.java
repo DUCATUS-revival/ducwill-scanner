@@ -70,7 +70,7 @@ public class Web3BCModule {
             final @Qualifier(NetworkType.DUCX_MAINNET_VALUE) Web3Network network,
             final @Qualifier("ducxMainnetLastBlockPersister") LastBlockPersister lastBlockPersister,
             final @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
-            final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength
+            final @Value("${etherscanner.ducatusx.commit-chain-length:2}") Integer commitmentChainLength
     ) {
         return new Web3Scanner(
                 network,
@@ -86,7 +86,7 @@ public class Web3BCModule {
             final @Qualifier(NetworkType.DUCX_TESTNET_VALUE) Web3Network network,
             final @Qualifier("ducxRopstenLastBlockPersister") LastBlockPersister lastBlockPersister,
             final @Value("${etherscanner.polling-interval-ms:5000}") Long pollingInterval,
-            final @Value("${etherscanner.commit-chain-length:5}") Integer commitmentChainLength
+            final @Value("${etherscanner.ducatusx.commit-chain-length:2}") Integer commitmentChainLength
     ) {
         return new Web3Scanner(
                 network,
